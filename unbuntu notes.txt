@@ -1,0 +1,8 @@
+Install java
+	sudo apt-get install openjdk-8-jdk
+Install Intellij idea Ultimate
+	Install from applications
+Instalar MySQL
+	sudo apt-get install mysql-server-5.7
+	MySQL Workbench - Install from applications
+	
