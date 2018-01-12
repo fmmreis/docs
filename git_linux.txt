@@ -1,0 +1,377 @@
+-----------------------------------------------------------
+GIT
+
+git is destributed version control system
+http://git-scm.com
+git--
+1)Installation
+$ sudo apt-get install git
+
+2)Configuration
+$ git version
+$ git config --global user.name "Fernando Reis"
+$ git config --global user.email "fmreis@gmail.com"
+c:\> git config --global core.editor "notepad.exe"
+$ git config --global core.editor.emacs
+$ git config --global merge.tool vimdiff
+$ git config --list
+$ git help <verb>
+$ cat .gitconfig
+$ git help
+$ git init	(inside the folder)
+$ ls -la .git
+(add file to the directory)
+$ git add .
+$ git commit -m "Initial commit"
+$ git commit -a -m 'added new benchmarks' -- pula o git add
+$ git log
+$ git log -<numero> 	-- mostra unicamente os ultimos <numero> commits
+$ git log -p 		-- mostra o que foi alterado no ultimo commit. pode ser usado com a opção -<numero>
+$ git log --stat	-- mostra estatísticas abreviadas
+$ git log --since=2.weeks
+$ git status
+$ git diffgit log -p
+$ git diff --cached
+$ git diff --staged
+$ git commit --amend	--modifica o último commit
+$ git reset HEAD <file> --retira o ficheiro da stanging area "" 
+$ git rm <file to remove>
+$ git commit -m "Deleted file"
+$ git mv <old file name> <new file name>
+$ git status --oneline --decorate
+$ git status --oneline --decorate --all
+$ git checkout feature1
+$ cat .git/HEAD
+$ git merge feature1
+$ git branch -d feature1
+
+$ git stash save stash_name
+$ git stash list
+$ git stash apply stash@{0}
+$ git stash drop stash@{0}
+$ git stash pop stash@{0}
+
+$ git remote
+$ git remote -v
+$ git remote add [nome-remoto] [url]
+$ git remote show [nome-remoto]
+
+-----------------------------------------------------------
+MAVEN
+Multiple jars
+Dependencies and versions
+Project structure
+Building, publishing and deploying
+
+Installation
+download from apache and extract fo a location (/home/fmreis/java/apache-maven-3.0.3)
+export M2_HOME=/home/fmreis/java/apache-maven-3.0.3
+export PATH=/home/fmreis/java/apache-maven-3.0.3/bin:${PATH}
+$ mvn --version
+$ mkdir myapp
+$ cd myapp/
+$ mvn achetype:generate		(get all achetypes available)
+choose an archtype
+Define groupid			(org.fmreis.tests)
+Define artifactid		(application name)
+Define version			(1.0-SNAPSHOT)
+Define package			(org.fmreis.tests)
+
+$ mvn compile
+$ mvn package
+$ java -cp target/MavenTestApp-1.0-SNAPSHOT.jar org.fmreis.tests.App
+
+Maven Archetype
+	Folder Structure
+	pom.xml
+
+Maven Build
+	Buid lifecycle consists of phases (previous phases are automatically executes)
+		validate
+		compile
+		test
+		package (build the jar/war etc)
+		install (installs into the local maven repository)
+		deploy	(installs into the remote repository)
+		clean
+
+Lifecycle
+	clean*
+	validate*
+	initialize
+	initialize
+	generate-sources
+	process-sources
+	generate-resources
+	process-resources
+	compile*
+	process-classes
+	generate-test-sources
+	...
+	package*
+	verify*
+	install*
+	deploy*
+		
+-----------------------------------------------------------
+DOCKER
+LXC - linux containers
+Repositório de imagens : https://hub.docker.com
+Agiliza o desenvolvimento
+Necessita o kernel 3.8+
+$ uname -r 					(verificar se suporta o docker)
+$ curl -sSL https://get.docker.com | sh		(instala o docker)
+$ sudo usermod -aG docker $USER			(permite exeutar docker sem sudo)
+$ /etc.init.d/docker start			(iniciar o docker)
+$ ps -ef | grep docker				(verificar se está no ar)
+$ docker ps 					(informa os containers que estão em execução)
+$ docker images					(lista as imagens docker disponíveis)
+$ docker run -i -t ubuntu:16.10 /bin/bash	(cria container do ubuntu na versão 16.10 e inicia processo /bin/bash e fica logo dentro do container)
+# uname -a
+# cat /etc/issue
+Neste momento se se fizer ctrl-d vai matar o container. Tem que ser ctrl-p-q
+$ docker ps 					(verifica-se que o container continua ativo)
+$ docker attach <containerId>			(volta para o container)
+$ docker diff <containerId>			(exibe todas as modificações efetuadas no container)
+$ docker run -i -t -p 8080:80 ubuntu:16.10 /bin/bash
+# apt-get install nginx				(instala webserver nginx nota: foi necessário fazer primeito apt-get -qq update)
+# /etc/init.d/nginx start			(inicia o nginx)
+# netstat -atunp				(para verificar que a porta 80 está à escuta. nota: foi necessário fazer apt install net-tools)
+$ docker commit <id do container> <nome da versão> (grava a imagem do container)
+$ docker stop <containerId>			(faz stop do container)
+$ docker exec <containerId> <comando>		(executa um comando no container)
+$ docker inspect <containerId>			(exibe informações acerca do container)
+$ curl <ipContainer>:80				(exibe a welcome page nginx)
+$ curl localhost:8080				(exibe a welcome page nginx)
+$ docker stats					(exibe dados estatísticos dos containers)
+$ docker rm <containerId>			(remove container)
+$ docker rm -f <containerId>			(remove container force)
+$ docker images					(mostra lista de imagens)
+$ docker rmi <imageId>				(remove imagem)
+$ docker rmi -f <imageId>			(remove imagem force)
+*********************************************
+...Colocar aqui a comunicaçãoentre containers...
+docker run --link *incompleto
+kubernates é o orquestrador
+*********************************************
+Docker file is like make file
+Só pode existir 1 docker file por directório
+
+
+-----------------------------------------------------------
+LINUX
+
+tasksel					(install all the packages needed for the service specified)
+
+sudo apt-get intall <application>	(installs application)
+sudo apt-get remove <application>	(removes application)
+sudo apt-get update			(upgrades everything in the computer)
+
+sudo /etc/init.d/<service> start	(start service)
+sudo /etc/init.d/service> stop		(stop service)
+sudo /etc/init.d/<service> restart	(restart service)
+
+sudo top				(task manager like)
+h					(shows help)
+k <pid>					(kills process with pid)
+
+cd <directory>				(change to directory)
+
+$ sudo apt-get update
+$ sudo apt-get upgrade
+$ apt-cache show <package name>
+V apt-cache showpkg <package name>
+
+-----------------------------------------------------------
+
+MAC OS X
+Verificar se processador tem acesso a virtualização - securable.exe
+
+
+-----------------------------------------------------------
+JEE
+	two Facelets pages and a single CDI named bean
+	XHTML + JSF-specific XML namespaces ()
+		<html xmlns="http://www.w3.org/1999/xhtml"
+		      xmlns:h="http://java.sun.com/jsf/html"
+		      xmlns:f="http://java.sun.com/jsf/core">
+
+value-binding expression - 
+
+JSF managed beans		-	@ManagedBean
+CDI named beans (preferred)	-	@Named
+
+
+
+----
+
+Weblogic/Glassfish
+JDBC
+Ajax
+
+
+@Entity
+@Table(name="")
+
+@Id
+@Column(name="") só é necessário se nome diferente
+
+@OneToOne 	(mappedBy)
+@OneToMany 	(mappedBy)
+@ManyToOne 	(mappedBy)
+@ManyToMany 	(mappedBy)
+
+@JoinTable
+@JoinCollumn(name="")
+MappedBy attribute
+
+
+@ManyToMany  
+@JoinTable(name = "ORDER_ITEMS", 
+      joinColumns = @JoinColumn(name = "ORDER_ID", referencedColumnName = "<ORDER>ORDER_ID"), 
+      inverseJoinColumns = @JoinColumn(name = "ITEM_ID", referencedColumnName = "<ITEM>ITEM_ID")
+  )
+
+
+
+@Namedsudo top
+@RequestScope
+
+
+
+
+
+EntityManager - cada application server tem implementação própria
+
+JPQL - Java Persitence Query Language
+
+-----------------
+@Entity
+@Table (name="USER_DETAILS")
+@Id @GeneratedValue (strategy=GenerationType.AUTO)						
+@Column (name="USER_ID")
+@ElementCollection	
+@JoinTable (name="USER_ADDRESS", joinColumns=@JoinColumn(name="USER_ID"))		
+@Embeddable
+@Embedded
+@GenericGenerator(name="hilo-gen", strategy="hilo")
+@CollectionId(columns = { @Column(name="ADDRESS_ID") }, generator = "hilo-gen", type = @Type(type="long"))
+
+
+criteriaDelete.where(criteriaBuilder.or(criteriaBuilder.
+equal(
+root.get("city"), "New York"),
+criteriaBuilder.equal(root.get("city"), "New York")));
+
+
+Archytecture patterns
+	Layered archytecture
+	Event Driven archytecture
+	Microkernel archytectere
+	Microservices archytecture
+
+
+SOFT SKILLS
+Leadership skills
+Collaboration skills
+Critical thinking and Problem solving skills - Decision making
+Communication skills
+
+
+https://www.youtube.com/watch?v=FzPPVEJEVMs
+https://www.youtube.com/watch?v=6JukJFEdSag#t=115.232312
+https://www.youtube.com/watch?v=IEg_i1LNhEo&t=968s
+----------------------------------------------------------------------------------
+WTX 
+Create a new project
+Create a schema file
+Create a xml file based on the shema file
+Create a Map
+
+Compoments
+Type Designer -Used to specify, manage and define type definitions in form or type trees.
+Map Designer - Sources and targets are defined with map cards
+Integration Flow Designer
+Database Interface Designer
+----------------------------------------------------------------------------------------------------------------------------
+
+REST
+REST is not a framework, is not a library, an architectural style like the Tajmahal
+
+HTTP
+verbs, stateless, methods
+header - Alt-Svc - Alternative Services
+
+Constraints
+	Client-Server - It needs to be a Client-Server application
+		Separation of concerns
+	Stateless
+	Cache
+	Uniform Interface
+		Identification of resources
+Sample
+	http://petstore.swagger.io
+
+Richarson Maturity Model
+	Level 0
+	Level 1 - Resources
+	Level 2 - HTTP verbs
+	Level 3 - Hypermedia - HATEOAS
+
+------------------------------------------------------------------------
+Top ten technologies to learn in 2018 (let's get started)
+- Distributed Computing - data is not present in a central location and is distributed across multiple instances
+	Distributed Databases
+		Cassandra
+		CouchDB
+		Apache HBase
+		Mongo DB		
+	Distributed Data Processing
+- Machine Learning
+	Artificial Inteligence
+		google maps
+		uber
+		amazon
+		facebook
+	Natural Language Processing		
+- Polyglot -multiple languuages deployments with java, python, ruby and javascript
+	
+- Microservices - Efficient design patterns on the Cloud
+	
+- Reality - Augmented and virtual
+- Blockchain
+- Docker
+- Cloud
+- Reactive Programming
+- DevOps
+
+~--------------------------------------------------------------------------
+Intellij shortcuts
+Shift+F10 -Run
+Shift+F1 - View|External Documentation	
+Shift+F6 - Refactor	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
