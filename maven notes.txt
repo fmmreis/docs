@@ -1,0 +1,55 @@
+MAVEN
+Multiple jars
+Dependencies and versions
+Project structure
+Building, publishing and deploying
+
+Installation
+download from apache and extract fo a location (/home/fmreis/java/apache-maven-3.0.3)
+export M2_HOME=/home/fmreis/java/apache-maven-3.0.3
+export PATH=/home/fmreis/java/apache-maven-3.0.3/bin:${PATH}
+$ mvn --version
+$ mkdir myapp
+$ cd myapp/
+$ mvn achetype:generate		(get all achetypes available)
+choose an archtype
+Define groupid			(org.fmreis.tests)
+Define artifactid		(application name)
+Define version			(1.0-SNAPSHOT)
+Define package			(org.fmreis.tests)
+
+$ mvn compile
+$ mvn package
+$ java -cp target/MavenTestApp-1.0-SNAPSHOT.jar org.fmreis.tests.App
+
+Maven Archetype
+	Folder Structure
+	pom.xml
+
+Maven Build
+	Buid lifecycle consists of phases (previous phases are automatically executes)
+		validate
+		compile
+		test
+		package (build the jar/war etc)
+		install (installs into the local maven repository)
+		deploy	(installs into the remote repository)
+		clean
+
+Lifecycle
+	clean*
+	validate*
+	initialize
+	initialize
+	generate-sources
+	process-sources
+	generate-resources
+	process-resources
+	compile*
+	process-classes
+	generate-test-sources
+	...
+	package*
+	verify*
+	install*
+	deploy*

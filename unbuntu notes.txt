@@ -5,4 +5,6 @@ Install Intellij idea Ultimate
 Instalar MySQL
 	sudo apt-get install mysql-server-5.7
 	MySQL Workbench - Install from applications
+
+este é um teste ao typing parece que está melhor aqui
 	

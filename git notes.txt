@@ -1,0 +1,56 @@
+GIT
+
+git is destributed version control system
+http://git-scm.com
+git--
+1)Installation
+$ sudo apt-get install git
+
+2)Configuration
+$ git version
+$ git config --global user.name "Fernando Reis"
+$ git config --global user.email "fmreis@gmail.com"
+c:\> git config --global core.editor "notepad.exe"
+$ git config --global core.editor.emacs
+$ git config --global merge.tool vimdiff
+$ git config --list
+$ git help <verb>
+$ cat .gitconfig
+$ git help
+$ git init	(inside the folder)
+$ ls -la .git
+(add file to the directory)
+$ git add .
+$ git commit -m "Initial commit"
+$ git commit -a -m 'added new benchmarks' -- pula o git add
+$ git log
+$ git log -<numero> 	-- mostra unicamente os ultimos <numero> commits
+$ git log -p 		-- mostra o que foi alterado no ultimo commit. pode ser usado com a opção -<numero>
+$ git log --stat	-- mostra estatísticas abreviadas
+$ git log --since=2.weeks
+$ git status
+$ git diffgit log -p
+$ git diff --cached
+$ git diff --staged
+$ git commit --amend	--modifica o último commit
+$ git reset HEAD <file> --retira o ficheiro da stanging area "" 
+$ git rm <file to remove>
+$ git commit -m "Deleted file"
+$ git mv <old file name> <new file name>
+$ git status --oneline --decorate
+$ git status --oneline --decorate --all
+$ git checkout feature1
+$ cat .git/HEAD
+$ git merge feature1
+$ git branch -d feature1
+
+$ git stash save stash_name
+$ git stash list
+$ git stash apply stash@{0}
+$ git stash drop stash@{0}
+$ git stash pop stash@{0}
+
+$ git remote
+$ git remote -v
+$ git remote add [nome-remoto] [url]
+$ git remote show [nome-remoto]

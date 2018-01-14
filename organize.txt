@@ -1,0 +1,217 @@
+----------------------------------------------------------
+LINUX
+
+tasksel					(install all the packages needed for the service specified)
+
+sudo apt-get intall <application>	(installs application)
+sudo apt-get remove <application>	(removes application)
+sudo apt-get update			(upgrades everything in the computer)
+
+sudo /etc/init.d/<service> start	(start service)
+sudo /etc/init.d/service> stop		(stop service)
+sudo /etc/init.d/<service> restart	(restart service)
+
+sudo top				(task manager like)
+h					(shows help)
+k <pid>					(kills process with pid)
+
+cd <directory>				(change to directory)
+
+$ sudo apt-get update
+$ sudo apt-get upgrade
+$ apt-cache show <package name>
+V apt-cache showpkg <package name>
+
+-----------------------------------------------------------
+
+MAC OS X
+Verificar se processador tem acesso a virtualização - securable.exe
+
+
+-----------------------------------------------------------
+JEE
+	two Facelets pages and a single CDI named bean
+	XHTML + JSF-specific XML namespaces ()
+		<html xmlns="http://www.w3.org/1999/xhtml"
+		      xmlns:h="http://java.sun.com/jsf/html"
+		      xmlns:f="http://java.sun.com/jsf/core">
+
+value-binding expression - 
+
+JSF managed beans		-	@ManagedBean
+CDI named beans (preferred)	-	@Named
+
+
+
+----
+
+Weblogic/Glassfish
+JDBC
+Ajax
+
+
+@Entity
+@Table(name="")
+
+@Id
+@Column(name="") só é necessário se nome diferente
+
+@OneToOne 	(mappedBy)
+@OneToMany 	(mappedBy)
+@ManyToOne 	(mappedBy)
+@ManyToMany 	(mappedBy)
+
+@JoinTable
+@JoinCollumn(name="")
+MappedBy attribute
+
+
+@ManyToMany  
+@JoinTable(name = "ORDER_ITEMS", 
+      joinColumns = @JoinColumn(name = "ORDER_ID", referencedColumnName = "<ORDER>ORDER_ID"), 
+      inverseJoinColumns = @JoinColumn(name = "ITEM_ID", referencedColumnName = "<ITEM>ITEM_ID")
+  )
+
+
+
+@Namedsudo top
+@RequestScope
+
+
+
+
+
+EntityManager - cada application server tem implementação própria
+
+JPQL - Java Persitence Query Language
+
+-----------------
+@Entity
+@Table (name="USER_DETAILS")
+@Id @GeneratedValue (strategy=GenerationType.AUTO)						
+@Column (name="USER_ID")
+@ElementCollection	
+@JoinTable (name="USER_ADDRESS", joinColumns=@JoinColumn(name="USER_ID"))		
+@Embeddable
+@Embedded
+@GenericGenerator(name="hilo-gen", strategy="hilo")
+@CollectionId(columns = { @Column(name="ADDRESS_ID") }, generator = "hilo-gen", type = @Type(type="long"))
+
+
+criteriaDelete.where(criteriaBuilder.or(criteriaBuilder.
+equal(
+root.get("city"), "New York"),
+criteriaBuilder.equal(root.get("city"), "New York")));
+
+
+Archytecture patterns
+	Layered archytecture
+	Event Driven archytecture
+	Microkernel archytectere
+	Microservices archytecture
+
+
+SOFT SKILLS
+Leadership skills
+Collaboration skills
+Critical thinking and Problem solving skills - Decision making
+Communication skills
+
+
+https://www.youtube.com/watch?v=FzPPVEJEVMs
+https://www.youtube.com/watch?v=6JukJFEdSag#t=115.232312
+https://www.youtube.com/watch?v=IEg_i1LNhEo&t=968s
+----------------------------------------------------------------------------------
+WTX 
+Create a new project
+Create a schema file
+Create a xml file based on the shema file
+Create a Map
+
+Compoments
+Type Designer -Used to specify, manage and define type definitions in form or type trees.
+Map Designer - Sources and targets are defined with map cards
+Integration Flow Designer
+Database Interface Designer
+----------------------------------------------------------------------------------------------------------------------------
+
+REST
+REST is not a framework, is not a library, an architectural style like the Tajmahal
+
+HTTP
+verbs, stateless, methods
+header - Alt-Svc - Alternative Services
+
+Constraints
+	Client-Server - It needs to be a Client-Server application
+		Separation of concerns
+	Stateless
+	Cache
+	Uniform Interface
+		Identification of resources
+Sample
+	http://petstore.swagger.io
+
+Richarson Maturity Model
+	Level 0
+	Level 1 - Resources
+	Level 2 - HTTP verbs
+	Level 3 - Hypermedia - HATEOAS
+
+------------------------------------------------------------------------
+Top ten technologies to learn in 2018 (let's get started)
+- Distributed Computing - data is not present in a central location and is distributed across multiple instances
+	Distributed Databases
+		Cassandra
+		CouchDB
+		Apache HBase
+		Mongo DB		
+	Distributed Data Processing
+- Machine Learning
+	Artificial Inteligence
+		google maps
+		uber
+		amazon
+		facebook
+	Natural Language Processing		
+- Polyglot -multiple languuages deployments with java, python, ruby and javascript
+	
+- Microservices - Efficient design patterns on the Cloud
+	
+- Reality - Augmented and virtual
+- Blockchain
+- Docker
+- Cloud
+- Reactive Programming
+- DevOps
+
+~--------------------------------------------------------------------------
+Intellij shortcuts
+Shift+F10 -Run
+Shift+F1 - View|External Documentation	
+Shift+F6 - Refactor	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
