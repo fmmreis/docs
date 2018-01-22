@@ -5,6 +5,69 @@ Install Intellij idea Ultimate
 Instalar MySQL
 	sudo apt-get install mysql-server-5.7
 	MySQL Workbench - Install from applications
+Instalar Tomcat
+	DEVELOPMENT:
+	apt-get update && apt-get upgrade
+	sudo apt-get install tomcat8
+	sudo apt-get install tomcat8-docs tomcat8-examples tomcat8-admin
+	sudo service tomcat8 start
+	sudo service tomcat8 restart
+	sudo service tomcat8 stop
+	cd /usr/share/tomcat7
+	sudo ln -s /etc/tomcat8 conf
+	sudo chmod -R 655 /etc/tomcat8/
+
+
+	PRODUCTION:
+	sudo groupadd tomcat
+	sudo useradd -s /bin/false -g tomcat -d /opt/tomcat tomcat
+	sudo apt install curl
+	get the download link for the tar.gz to download
+	move to the /tmp directory
+	curl -0 http://mirrors.up.pt/pub/apache/tomcat/tomcat-8/v8.5.24/bin/apache-tomcat-8.5.24.tar.gz --output /tmp/downloaded.gz
+	sudo mkdir /opt/tomcat
+	sudo tar xzvf apache-tomcat-8*tar.gz -C /opt/tomcat --strip-components=1
+	cd /opt/tomcat
+	sudo chgrp -R tomcat /opt/tomcat
+	sudo chmod -R g+r conf
+	sudo chown -R tomcat webapps/ work/ temp/ logs/
+	sudo update-java-alternatives -l (gets the JAVA_HOME, and add /jre to the path)
+	sudo nano /etc/systemd/system/tomcat.service
+	(edit the file with the following text changing the JAVA_HOME entry)
+		[Unit]
+		Description=Apache Tomcat Web Application Container
+		After=network.target
+
+		[Service]
+		Type=forking
+
+		Environment=JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64/jre
+		Environment=CATALINA_PID=/opt/tomcat/temp/tomcat.pid
+		Environment=CATALINA_HOME=/opt/tomcat
+		Environment=CATALINA_BASE=/opt/tomcat
+		Environment='CATALINA_OPTS=-Xms512M -Xmx1024M -server -XX:+UseParallelGC'
+		Environment='JAVA_OPTS=-Djava.awt.headless=true -Djava.security.egd=file:/dev/./urandom'
+
+		ExecStart=/opt/tomcat/bin/startup.sh
+		ExecStop=/opt/tomcat/bin/shutdown.sh
+
+		User=tomcat
+		Group=tomcat
+		UMask=0007
+		RestartSec=10
+		Restart=always
+
+		[Install]
+		WantedBy=multi-user.target
+	
+	sudo systemctl start tomcat
+	sudo systemctl status tomcat
+	sudo ufw allow 8080
+	sudo systemctl enable tomcat
+	sudo nano /opt/tomcat/conf/tomcat-users.xml
+	
+
+
 
 este é um teste ao typing parece que está melhor aqui
 	
