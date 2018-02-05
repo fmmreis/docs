@@ -4,12 +4,12 @@
 	les consonnes
 	B C D E F G H J K L M N P Q R S T V W X Z
 	
-	Verbe �TRE
+	Verbe ÊTRE
 	Je suis
 	Tu es
 	Il est
 	Nous sommes
-	Vous �tes
+	Vous êtes
 	Ils sont
 	
 	Verbe AVOIR
@@ -35,3 +35,16 @@
 	Nous nous appellons 
 	Vous vous appellez
 	Ils s'appellent
+	
+	Articles Définis
+	Le,L' / La, L' / Les
+	
+	Articles Indéfinis
+	Un / Une / Des
+	
+	Articles Interrogatives
+	Quel / Quelle
+	Quels / Quelles
+	
+	
+	
