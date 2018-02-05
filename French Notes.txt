@@ -1,0 +1,37 @@
+
+	les voyelles
+	A E I O U Y
+	les consonnes
+	B C D E F G H J K L M N P Q R S T V W X Z
+	
+	Verbe ÊTRE
+	Je suis
+	Tu es
+	Il est
+	Nous sommes
+	Vous êtes
+	Ils sont
+	
+	Verbe AVOIR
+	J'ai
+	Tu as
+	Il a
+	Nous avons
+	Vous avez
+	Ils ont
+	
+	Verbe ALLER
+	Je vais
+	Tu vas
+	Il va
+	Nous allons
+	Vous allez
+	Ils vont
+	
+	Verbe S'APPELER
+	Je m'appele
+	Tu t'appelles
+	Il s'appelle
+	Nous nous appellons 
+	Vous vous appellez
+	Ils s'appellent
