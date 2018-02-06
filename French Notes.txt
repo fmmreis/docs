@@ -46,5 +46,27 @@
 	Quel / Quelle
 	Quels / Quelles
 	
+	Verbes
+	Faire - Fazer
+	Aimer 
+	Manger
+	Boire
+	Dormir
+	Laver
+	Partir
+	Rester
+	Jouer
+	Acheter
+	Vendre
+	Étudier
+	Travailler
+	Lire
+	Écrire
+	Parler
+	Marcher
 	
+	Rendre - Fazer
+	Porter - Trazer / Vestir
+	Penser - Pensar
+	Mourir - Morrer
 	
