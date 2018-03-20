@@ -1,4 +1,4 @@
-
+﻿
 	les voyelles
 	A E I O U Y
 	les consonnes
@@ -47,26 +47,29 @@
 	Quels / Quelles
 	
 	Verbes
-	Faire - Fazer
-	Aimer 
-	Manger
-	Boire
-	Dormir
-	Laver
-	Partir
-	Rester
-	Jouer
-	Acheter
-	Vendre
-	Étudier
-	Travailler
-	Lire
-	Écrire
-	Parler
-	Marcher
+	Faire 	- Fazer
+	Aimer 	- amar / gostar
+	Manger 	- comer
+	Boire 	- beber
+	Dormir 	- dormir
+	Laver	- lavar
+	Partir	- partir
+	Rester	- ficar
+	Jouer	- brincar
+	Acheter	- comprar
+	Vendre	- vender
+	Étudier	- estudar
+	Travailler - trabalhar 
+	Lire	   - ler
+	Écrire	   - escrever
+	Parler	- falar
+	Marcher	- andar
 	
 	Rendre - Fazer
 	Porter - Trazer / Vestir
 	Penser - Pensar
 	Mourir - Morrer
+
+
+	
 	
