@@ -2,20 +2,23 @@ GIT
 
 git is destributed version control system
 http://git-scm.com
-git--
+
 1)Installation
+$ sudo apt-get update
 $ sudo apt-get install git
 
 2)Configuration
 $ git version
 $ git config --global user.name "Fernando Reis"
 $ git config --global user.email "fmreis@gmail.com"
-c:\> git config --global core.editor "notepad.exe"
+$ git config --global core.editor "notepad.exe"
 $ git config --global core.editor.emacs
 $ git config --global merge.tool vimdiff
 $ git config --list
 $ git help <verb>
 $ cat .gitconfig
+
+
 $ git help
 $ git init	(inside the folder)
 $ ls -la .git
@@ -29,7 +32,8 @@ $ git log -p 		-- mostra o que foi alterado no ultimo commit. pode ser usado com
 $ git log --stat	-- mostra estatísticas abreviadas
 $ git log --since=2.weeks
 $ git status
-$ git diffgit log -p
+$ git diff
+$ git log -p
 $ git diff --cached
 $ git diff --staged
 $ git commit --amend	--modifica o último commit
@@ -44,6 +48,7 @@ $ cat .git/HEAD
 $ git merge feature1
 $ git branch -d feature1
 
+4) Stash
 $ git stash save stash_name
 $ git stash list
 $ git stash apply stash@{0}

@@ -35,7 +35,15 @@
 	Nous nous appellons 
 	Vous vous appellez
 	Ils s'appellent
-	
+
+	Verbe VOULOIR	
+	Je veux			J'ai voulu		Je voudrai
+	Tu veux			Tu as voulu		Tu voudras
+	Il veut			Il a voulu		Il voudra
+	Nous voulons		Nous avons voulu	Nous voudrions
+	Vous voulez		Vous avez voulu		Vous voudriez
+	Ils voulent		Ils ont voulu		Ils voudront
+
 	Articles Définis
 	Le,L' / La, L' / Les
 	
