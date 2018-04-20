@@ -1,4 +1,4 @@
-DOCKER
+﻿DOCKER
 LXC - linux containers
 Repositório de imagens : https://hub.docker.com
 Agiliza o desenvolvimento
@@ -6,37 +6,56 @@ Necessita o kernel 3.8+
 $ uname -r 					(verificar se suporta o docker)
 $ curl -sSL https://get.docker.com | sh		(instala o docker)
 $ sudo usermod -aG docker $USER			(permite exeutar docker sem sudo)
-$ /etc.init.d/docker start			(iniciar o docker)
+$ /etc/init.d/docker n			(iniciar o docker)
 $ ps -ef | grep docker				(verificar se está no ar)
 $ docker ps 					(informa os containers que estão em execução)
-$ docker images					(lista as imagens docker disponíveis)
-$ docker run -i -t ubuntu:16.10 /bin/bash	(cria container do ubuntu na versão 16.10 e inicia processo /bin/bash e fica logo dentro do container)
+$ docker images					(lista as imagens docker instaladas)
+$ docker run -ti ubuntu:16.10 /bin/bash	(cria container do ubuntu na versão 16.10 e inicia processo /bin/bash e fica logo dentro do container
+						 neste momento apenas um processo está a ser executado, o bash)
 # uname -a
 # cat /etc/issue
-Neste momento se se fizer ctrl-d vai matar o container. Tem que ser ctrl-p-q
+Neste momento se se fizer ctrl-d vai matar o container. Tem que ser ctrl-p-q o que faz que saia do container mas o mesmo fique activo
 $ docker ps 					(verifica-se que o container continua ativo)
 $ docker attach <containerId>			(volta para o container)
 $ docker diff <containerId>			(exibe todas as modificações efetuadas no container)
-$ docker run -i -t -p 8080:80 ubuntu:16.10 /bin/bash
+$ docker run -i -t -p 8080:80 ubuntu:16.10 /bin/bash  (8080 é a porta da máquina física, 80 é a porta do container, expõe a porta 80 do container na porta 8080 da máquina física)
 # apt-get install nginx				(instala webserver nginx nota: foi necessário fazer primeito apt-get -qq update)
-# /etc/init.d/nginx start			(inicia o nginx)
+# /etc/init.d/nginx start			(inicia o nginx, ps -ef agora já exibe o novo processo ingnx)
 # netstat -atunp				(para verificar que a porta 80 está à escuta. nota: foi necessário fazer apt install net-tools)
 $ docker commit <id do container> <nome da versão> (grava a imagem do container)
 $ docker stop <containerId>			(faz stop do container)
-$ docker exec <containerId> <comando>		(executa um comando no container)
-$ docker inspect <containerId>			(exibe informações acerca do container)
+
+$ docker exec <containerId> <comando>		(executa um comando dentro do container)
+$ docker inspect <containerId>			(exibe informações acerca do container, detalhes do container em execução)
 $ curl <ipContainer>:80				(exibe a welcome page nginx)
 $ curl localhost:8080				(exibe a welcome page nginx)
 $ docker stats					(exibe dados estatísticos dos containers)
-$ docker rm <containerId>			(remove container)
-$ docker rm -f <containerId>			(remove container force)
-$ docker images					(mostra lista de imagens)
+$ docker stop <containerId>			(para o container)
+$ docker rm <containerId>			(remove container, dá erro se estiver em execução)
+$ docker rm -f <containerId>			(remove container force, pára mesmo estando em execução)
 $ docker rmi <imageId>				(remove imagem)
 $ docker rmi -f <imageId>			(remove imagem force)
+
+
 *********************************************
-...Colocar aqui a comunicaçãoentre containers...
+...Colocar aqui a comunicação entre containers...
 docker run --link *incompleto
 kubernates é o orquestrador
 *********************************************
+
+
 Docker file is like make file
-Só pode existir 1 docker file por directório	
+Só pode existir 1 docker file por directório
+$ mkdir Dockerfile/apache
+$ cd Dockerfile/apache:
+$ vi Dockerfile
+	FROM ubuntu:17.10
+	MAINTAINER fmreis@gmail.com
+	RUN apt-get update && apt-get install -y apache2 && apt-get clean
+$ docker build -t linuxtips/apache:1.0 .
+$ docker run -it linuxtips/apache:1.0 /bin/bash
+# /etc/init.d/apache2 start
+
+
+
+
